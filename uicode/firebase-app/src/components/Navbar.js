@@ -6,7 +6,7 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <nav className="sticky top-0 inset-x-0 z-40 border-b font-custom dark:text-white dark:border-b-slate-700 bg-white dark:bg-slate-700">
+    <nav className="z-0 sticky top-0 inset-x-0  border-b font-custom dark:text-white dark:border-b-slate-700 bg-white dark:bg-slate-700">
       <div className="container mx-auto px-6 flex items-center font-nunito justify-between ">
         <div className="px-5 text-xl mb-5 mt-5 font-bold mx-auto">
           <span className="text-4xl">❤ Gratefulme </span>
