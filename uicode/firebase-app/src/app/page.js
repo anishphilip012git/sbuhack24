@@ -1,4 +1,6 @@
 import Footer from "@/components/Footer";
+import { HistoryNote } from "@/components/HistoryNote";
+// import RecordVoice from "@/components/RecordVoice";
 
 
 export default function Home() {
@@ -30,6 +32,14 @@ export default function Home() {
 
           </div>
         </div>
+      
+        <div class="h-screen flex overflow-auto items-center justify-center">
+          <HistoryNote/> 
+
+        <HistoryNote/>
+
+        <HistoryNote/></div>
+        
         <Footer />
       </div>
 
