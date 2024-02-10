@@ -1,4 +1,4 @@
-import AudioRecorder from "@/components/AudioRecorder";
+
 import DailyMoodPost from "@/components/DailyMoodPost";
 import Footer from "@/components/Footer";
 import { HistoryNote } from "@/components/HistoryNote";
@@ -33,11 +33,11 @@ export default function Home() {
 
         </div>
       </div>
-      <AudioRecorder />
       
-      <div class="h-screen flex overflow-auto items-center justify-center">
+      
+      <div className="h-screen flex overflow-auto items-center justify-center">
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 space-x-12 items-center justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-3 space-x-12 items-center justify-center">
           <HistoryNote />
           <HistoryNote />
           <HistoryNote />
