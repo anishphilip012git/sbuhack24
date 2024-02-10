@@ -1,4 +1,4 @@
-import AudioRecorder from "@/components/AudioRecorder";
+
 import DailyMoodPost from "@/components/DailyMoodPost";
 import Footer from "@/components/Footer";
 import { HistoryNote } from "@/components/HistoryNote";
@@ -33,7 +33,7 @@ export default function Home() {
 
         </div>
       </div>
-      <AudioRecorder />
+      
       
       <div className="h-screen flex overflow-auto items-center justify-center">
 
