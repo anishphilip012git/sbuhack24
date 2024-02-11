@@ -14,8 +14,19 @@ const Journal = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        const apiMessage = [
+            {
+                "How did you sleep?": ans1,
+                "What are your goals for the day?":ans2,
+                "Did you exercise today?":ans3
+                
+            }
+        ]
+        setans1("")
+        setans2("")
+        setans3("")
 
-        alert(mood)
+        
     }
     return (
         <div className='max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'>
