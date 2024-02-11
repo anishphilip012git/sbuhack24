@@ -6,7 +6,7 @@ import { redirect } from 'next/dist/server/api-utils'
 
 const login = () => {
     function useLogin() {
-        const [name,setName]=useState("")
+        // const [name,setName]=useState("")
         const [email,setEmail] = useState("")
         const [password,setPassword] = useState("")
       }
@@ -33,7 +33,7 @@ const login = () => {
 
   
         // redirect("/")
-        alert(email)
+        // alert(email)
         
 
     }
@@ -53,10 +53,10 @@ const login = () => {
 
                 <form className="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" onSubmit={handleSubmit} action="/">
                     <h3 className="text-xl font-medium text-gray-900 dark:text-white">Login to our platform</h3>
-                    <div>
+                    {/* <div>
                         <label  className="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Your name</label>
                         <input onChange={e=>setName(e.target.value)} type="name" name="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="John Doe" required="" />
-                    </div>
+                    </div> */}
                     <div>
                         <label  className="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Your email</label>
                         <input onChange={e=>setEmail(e.target.value)} type="email" name="email" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required="" />

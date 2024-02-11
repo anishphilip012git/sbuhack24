@@ -6,6 +6,8 @@ import AudioRecorder from "@/components/AudioRecorder";
 import EmbedYT from "@/components/EmbedYT";
 import Journal from "@/components/Journal";
 import React, { useState } from "react";
+import login from "@/pages/login";
+import Link from "next/link";
 
 
 
@@ -79,8 +81,9 @@ export default function Home() {
 
   return (
     <div>
-
+        
       <div className=" font-custom pt-24 h-screen bg-white text-center dark:bg-slate-100">
+        
         <h1 className="text-5xl font-extrabold leading-tight tracking-tighter sm:text-5xl md:text-5xl lg:text-6xl dark:text-slate-700 text-center">
           Stay grateful in <br />
           your future endeavors

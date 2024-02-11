@@ -51,10 +51,10 @@ const AudioRecorder = () => {
 
     const headers = new Headers();
     headers.append('Content-Type', 'audio/wav');
-  
+
     try {
       // const response = await fetch('https://us-central1-sbuhack24.cloudfunctions.net/apicall/', {
-        const  response  = await fetch('https://us-central1-sbuhack24.cloudfunctions.net/function-1', {
+      const response = await fetch('https://us-central1-sbuhack24.cloudfunctions.net/function-1', {
         method: 'POST',
         headers: headers,
         body: blob, // Directly send the File object as the body
@@ -74,37 +74,51 @@ const AudioRecorder = () => {
 
   return (
     <div>
-            <button className="bg-white dark:bg-slate-600 dark:text-white text-base font-medium px-4 py-2 rounded-md mt-12 ml-6"
-                onClick={() => setShowModal(true)}>
-                Record your thoughts
+      <button className="bg-white dark:bg-slate-600 dark:text-white text-base font-medium px-4 py-2 rounded-md mt-12 ml-6"
+        onClick={() => setShowModal(true)}>
+        Record your thoughts
+      </button>
+
+      <div className='top-50 justify-center mx-auto'>
+
+        <Modal className="items-center my-auto   mx-auto max-w-2xl h-3/4 rounded-3xl bg-slate-800 pt-20 px-4 "
+          isOpen={showModal}>
+          
+          <h5 className="justify-center px-auto flex mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          Please tell us how you are feeling today. Is there something that is bothering you?
+        </h5>
+        
+          <div className='flex justify-center p-4'>
+            <button className=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onClick={startRecording} id="startBtn">Start Recording</button>
+            <button className="  text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onClick={stopRecording} id="stopBtn">Stop Recording</button>
+          </div>
+
+          <div className='flex flex-col'>
+            <audio className='w-full' ref={audioRef} controls id="player"></audio><br></br>
+
+            <button className="flex justify-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onClick={handleSubmit} type="submit">
+              Upload Audio
             </button>
 
-            <div className='top-50 justify-center mx-auto'>
-                <Modal className="items-center my-auto  mx-auto max-w-2xl h-3/4 rounded-3xl bg-slate-800 py-6 px-4"
-                    isOpen={showModal}>
-                    
-                    <div>
-      <button className="flex justify-left text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onClick={startRecording} id="startBtn">Start Recording</button>
-      <button className="flex justify-right text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onClick={stopRecording} id="stopBtn">Stop Recording</button>
-      
-      <audio className="flex justify-center" ref={audioRef} controls id="player"></audio><br></br>
-      <button  className="flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" onClick={handleSubmit} type="submit">Upload Audio</button>
+          </div>
+
+          <div className='flex justify-center'>
+            <button className="justify-center mx-auto hover:scale-110 text-white bg-black  dark:bg-white dark:text-black text-base font-medium px-4 py-2 rounded-md mt-12"
+              onClick={() => setShowModal(false)}>
+              Close
+            </button>
+          </div>
+
+
+
+
+        </Modal>
+      </div>
+
+
     </div>
 
-                    
-
-                    <button className="justify-center hover:scale-110 text-white bg-black  dark:bg-white dark:text-black text-base font-medium px-4 py-2 rounded-md mt-12"
-                        onClick={() => setShowModal(false)}>
-                        Close
-                    </button>
-
-                </Modal>
-            </div>
-
-
-        </div>
-    
   );
 };
 
-export default AudioRecorder;
+export default AudioRecorder;
