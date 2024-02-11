@@ -54,19 +54,19 @@ const AudioRecorder = () => {
   
     try {
       // const response = await fetch('https://us-central1-sbuhack24.cloudfunctions.net/apicall/', {
-        const response = await fetch('https://us-central1-sbuhack24.cloudfunctions.net/function-1', {
+        const  response  = await fetch('https://us-central1-sbuhack24.cloudfunctions.net/function-1', {
         method: 'POST',
         headers: headers,
         body: blob, // Directly send the File object as the body
-        mode: 'no-cors'
+        // mode: 'no-cors'
       });
-
       if (!response.ok) {
         throw new Error('Failed to upload audio');
       }
 
       const data = await response.json();
       console.log('Response from server:', data);
+      sessionStorage.setItem("recommendation",data)
     } catch (error) {
       console.error('Error uploading audio:', error);
     }

@@ -2,6 +2,7 @@
 import React, {useState} from 'react'
 import "../app/globals.css"
 import { redirect } from 'next/dist/server/api-utils'
+// import {CheckUser} from '../components/CheckUser';
 
 const login = () => {
     function useLogin() {
@@ -36,9 +37,16 @@ const login = () => {
         
 
     }
+    const handleLogin=async(e)=>{
+        CheckUser();
+
+    }
+
     const handleSignup=async (e)=>{
         e.preventDefault();
     }
+
+   
     return (
         <>
             <div className=" bg-white dark:bg-slate-700 rounded-3xl shadow relative mt-20 p-6 justify-center w-1/2 mx-auto my-auto">
@@ -59,7 +67,7 @@ const login = () => {
                     </div>
 
               
-                    <button type="submit" className="hover:scale-110  dark:text-slate-700 bg-black w-full  dark:bg-white  text-base font-medium px-4 py-2 rounded-md mt-12">
+                    <button type="submit" className="hover:scale-110  dark:text-slate-700 bg-black w-full  dark:bg-white  text-base font-medium px-4 py-2 rounded-md mt-12" onClick={handleLogin}>
                         Login to your account
                     </button>
                     <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
