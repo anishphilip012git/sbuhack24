@@ -17,7 +17,7 @@ const DailyMoodPost = () => {
     }
     return (
         <div>
-            <button className="hover:scale-110 text-white bg-black  dark:bg-white dark:text-black text-base font-medium px-4 py-2 rounded-md mt-12"
+            <button className="hover:scale-110  dark:text-slate-700 bg-black  dark:bg-white  text-base font-medium px-4 py-2 rounded-md mt-12"
                 onClick={() => setShowModal(true)}>
                 Write it down
             </button>

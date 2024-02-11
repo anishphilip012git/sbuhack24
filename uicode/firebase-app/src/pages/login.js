@@ -1,35 +1,56 @@
-import React from 'react'
+"use client"
+import React, {useState} from 'react'
 import "../app/globals.css"
+import { redirect } from 'next/dist/server/api-utils'
 
 const login = () => {
+    const [email,setEmail] = useState("")
+    const [password,setPassword] = useState("")
+
+    const handleSubmit = async (e)=>{
+        e.preventDefault();
+        const emailId = email
+        const userPassword = password
+        setEmail("")
+        setPassword("")
+
+        const response = await fetch('/api/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password }),
+          })
+       
+          if (response.ok) {
+            router.push('/profile')
+          } else {
+            // Handle errors
+          }
+
+  
+        // redirect("/")
+        alert(email)
+
+    }
     return (
         <>
-            <div class="bg-white rounded-3xl shadow relative dark:bg-gray-700 justify-center w-1/2 mx-auto my-auto">
+            <div class=" bg-white dark:bg-slate-700 rounded-3xl shadow relative mt-20 p-6 justify-center w-1/2 mx-auto my-auto">
 
-                <form class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" action="#">
-                    <h3 class="text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h3>
+                <form class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" onSubmit={handleSubmit} action="/">
+                    <h3 class="text-xl font-medium text-gray-900 dark:text-white">Login to our platform</h3>
                     <div>
-                        <label for="email" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Your email</label>
-                        <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required="" />
+                        <label  class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Your email</label>
+                        <input onChange={e=>setEmail(e.target.value)} type="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required="" />
                     </div>
                     <div>
                         <label for="password" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Your password</label>
-                        <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="" />
+                        <input onChange={e=> setPassword(e.target.value)} type="password" name="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="" />
                     </div>
-                    <div class="flex justify-between">
-                        <div class="flex items-start">
-                            <div class="flex items-center h-5">
-                                <input id="remember" aria-describedby="remember" type="checkbox" class="bg-gray-50 border border-gray-300 focus:ring-3 focus:ring-blue-300 h-4 w-4 rounded dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required="" />
-                            </div>
-                            <div class="text-sm ml-3">
-                                <label for="remember" class="font-medium text-gray-900 dark:text-gray-300">Remember me</label>
-                            </div>
-                        </div>
-                        <a href="#" class="text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
-                    </div>
-                    <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login to your account</button>
+              
+                    <button type="submit" class="hover:scale-110  dark:text-slate-700 bg-black w-full  dark:bg-white  text-base font-medium px-4 py-2 rounded-md mt-12">
+                        Login to your account
+                    </button>
                     <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-                        Not registered? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
+                        Not registered? <a href="" class="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
                     </div>
                 </form>
             </div>
