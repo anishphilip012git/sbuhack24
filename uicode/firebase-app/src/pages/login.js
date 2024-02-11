@@ -4,9 +4,12 @@ import "../app/globals.css"
 import { redirect } from 'next/dist/server/api-utils'
 
 const login = () => {
-    const [name,setName]=useState("")
-    const [email,setEmail] = useState("")
-    const [password,setPassword] = useState("")
+    function useLogin() {
+        const [name,setName]=useState("")
+        const [email,setEmail] = useState("")
+        const [password,setPassword] = useState("")
+      }
+    
 
     const handleSubmit = async (e)=>{
         e.preventDefault();
