@@ -3,7 +3,8 @@ import DailyMoodPost from "@/components/DailyMoodPost";
 import Footer from "@/components/Footer";
 import { HistoryNote } from "@/components/HistoryNote";
 import AudioRecorder from "@/components/AudioRecorder";
-
+import EmbedYT from "@/components/EmbedYT";
+import Journal from "@/components/Journal";
 import React, { useState } from "react";
 
 
@@ -11,13 +12,9 @@ import React, { useState } from "react";
 export default function Home() {
   
   
-  const [currentIndex, setCurrentIndex] = useState(0)
+  
 
-  const handleClick = (e) => {
-    // Update the currentIndex, cycling back to 0 if we reach the end of the array
-    setCurrentIndex(currentIndex=>(currentIndex + 1) % response.affirmations.length);
-    console.log(`Current Index is ${currentIndex}`);
-  };
+  
   const response = [{
 
     "datetime": {
@@ -40,7 +37,7 @@ export default function Home() {
   "userEmail": "mantsingh@cs.stonybrook.edu",
   "youtubelink": [
       "https://www.youtube.com/watch?v=tDb01ggyDfo",
-      "\"https://www.youtube.com/watch?v=CpNBODqTA34",
+      "https://www.youtube.com/watch?v=CpNBODqTA34",
       "https://www.youtube.com/watch?v=WYetg3AuLE4",
       "https://www.youtube.com/watch?v=ZbZSe6N_BXs",
       "https://www.youtube.com/watch?v=ee8CdS-Swnw"
@@ -60,7 +57,7 @@ export default function Home() {
   ],
   "sentimentscore": 0.3,
   "affirmations": [
-      "Want to explore something new today?",
+      "2Want to explore something new today?",
       "Here are some interesting reads and activities you might enjoy:",
       "TED Talks for a variety of intriguing topics: https://www.ted.com/talks",
       "Meetup for finding local workshops or activities: https://www.meetup.com"
@@ -77,7 +74,7 @@ export default function Home() {
 
   }
 ]
-console.log(response);
+
 
 
   return (
@@ -100,6 +97,7 @@ console.log(response);
           <DailyMoodPost />
 
           <AudioRecorder />
+          
         </div>
         <div className="mt-24">
 
@@ -109,13 +107,19 @@ console.log(response);
 
       <div className="h-screen flex overflow-auto items-center justify-center">
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 space-x-12 items-center justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-3 space-x-12 items-center justify-center">
 
           <HistoryNote
-            onClick={handleClick}
-            affirmations = {response[0].affirmations[0]}
+            resLength = {response[response.length-1].affirmations.length}
+            affirmations = {response[response.length-1].affirmations}
             />
+          
+          <EmbedYT 
+          resLength = {response[response.length-1].youtubelink.length}
+          videos = {response[response.length-1].youtubelink}
+          />
 
+          <Journal/>
 
 
         </div>
