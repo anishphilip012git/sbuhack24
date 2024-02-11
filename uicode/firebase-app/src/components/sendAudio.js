@@ -7,7 +7,7 @@ export default async function handler(req, res) {
         formData.append('audio', req.body);
   
         // Make HTTP POST request to the server
-        const response = await fetch('http://example.com/upload-audio', {
+        const response = await fetch('https://us-central1-sbuhack24.cloudfunctions.net/upload', {
           method: 'POST',
           body: formData,
         });

@@ -1,4 +1,5 @@
 
+import AudioRecorder from "@/components/AudioRecorder";
 import DailyMoodPost from "@/components/DailyMoodPost";
 import Footer from "@/components/Footer";
 import { HistoryNote } from "@/components/HistoryNote";
@@ -27,7 +28,7 @@ export default function Home() {
           {/* <a href="https://github.com/shekinahmanyi/gratefulme" className="hover:-translate-y-1 hover:scale-110 text-black bg-white dark:bg-slate-600 dark:text-white text-base font-medium px-4 py-2 rounded-md mt-12 ml-6">
             Record your thoughts
           </a> */}
-          <RecordMood/>
+          <AudioRecorder/>
         </div>
         <div className="mt-24">
 
