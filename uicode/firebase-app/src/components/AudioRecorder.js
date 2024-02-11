@@ -53,7 +53,8 @@ const AudioRecorder = () => {
     headers.append('Content-Type', 'audio/wav');
   
     try {
-      const response = await fetch('https://us-central1-sbuhack24.cloudfunctions.net/apicall/', {
+      // const response = await fetch('https://us-central1-sbuhack24.cloudfunctions.net/apicall/', {
+        const response = await fetch('https://us-central1-sbuhack24.cloudfunctions.net/function-1', {
         method: 'POST',
         headers: headers,
         body: blob, // Directly send the File object as the body
