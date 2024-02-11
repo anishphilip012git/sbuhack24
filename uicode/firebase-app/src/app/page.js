@@ -1,12 +1,14 @@
-
-import AudioRecorder from "@/components/AudioRecorder";
+"use client"
 import DailyMoodPost from "@/components/DailyMoodPost";
 import Footer from "@/components/Footer";
 import { HistoryNote } from "@/components/HistoryNote";
-import RecordMood from "@/components/RecordMood";
+import AudioRecorder from "@/components/AudioRecorder";
+
 
 
 export default function Home() {
+  const user = localStorage.getItem("user")
+  console.log(user);
   return (
     <div>
 
