@@ -4,6 +4,8 @@
 import React, { useState, useRef } from 'react';
 import Modal from "react-modal";
 
+// import { useEffect } from 'react';
+
 const AudioRecorder = () => {
   const [recorder, setRecorder] = useState(null);
   const audioRef = useRef(null);
@@ -12,6 +14,7 @@ const AudioRecorder = () => {
     OggOpusEncoderWasmPath: '/opus-media-recorder/OggOpusEncoder.wasm',
     WebMOpusEncoderWasmPath: '/opus-media-recorder/WebMOpusEncoder.wasm'
   };
+  
 
   const startRecording = async () => {
     console.log("start")
@@ -66,7 +69,9 @@ const AudioRecorder = () => {
 
       const data = await response.json();
       console.log('Response from server:', data);
-      sessionStorage.setItem("recommendation",data)
+      
+      sessionStorage.setItem("recommendation",JSON.stringify(data))
+      setShowModal(false)
     } catch (error) {
       console.error('Error uploading audio:', error);
     }
