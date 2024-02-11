@@ -10,10 +10,7 @@ const DailyMoodPost = () => {
     const [mood, setMood] = useState("");
     const [showModal, setShowModal] = useState(false);
 
-    const journalQuestions =[
-        "How did you sleep?",
-        "What are your goals for the day?"
-    ]
+    
 
     const handleSubmit = (e) => {
         e.preventDefault()

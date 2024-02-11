@@ -2,12 +2,19 @@ import React, { useState } from 'react'
 import Modal from "react-modal";
 
 const Journal = () => {
-    const [mood, setMood] = useState("");
+    const [ans1, setans1] = useState("");
+    const [ans2, setans2] = useState("");
+    const [ans3, setans3] = useState("");
     const [showModal, setShowModal] = useState(false);
+    const journalQuestions = [
+        "How did you sleep?",
+        "What are your goals for the day?",
+        "Did you exercise today?"
+    ]
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        
+
         alert(mood)
     }
     return (
@@ -23,15 +30,25 @@ const Journal = () => {
             <div className='top-50 justify-center mx-auto'>
                 <Modal className="items-center my-auto  mx-auto max-w-2xl h-3/4 rounded-3xl bg-slate-800 py-6 px-4"
                     isOpen={showModal}>
-                    
-                    <div className="bg-white rounded-3xl shadow relative dark:bg-gray-700 justify-center w-3/4 mx-auto my-auto">
 
-                        <form className="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" onSubmit={handleSubmit}>
+                    <div className="bg-white rounded-3xl shadow relative dark:bg-gray-700 dark:border-gray-700 justify-center w-3/4 mx-auto my-auto">
 
-                            <div className='mt-20 p-10 '>
-                                <label className="text-xl font-medium text-gray-900 block mb-10 dark:text-gray-300">How are you feeling today?</label>
-                                <textarea type="textbox" value={mood} onChange={e => setMood(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="" />
+                        <form className="pt-10 mx-auto" onSubmit={handleSubmit}>
+
+                            <div className='mt-2 px-20 '>
+                                <label className="text-xl font-medium text-gray-900 block mb-2 dark:text-gray-300">How did you sleep?</label>
+                                <textarea type="textbox" value={ans1} onChange={e => setans1(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white " required="" />
                             </div>
+                            <div className='mt-2 px-20 '>
+                                <label className="text-xl font-medium text-gray-900 block mb-2 dark:text-gray-300">What are your goals for the day?</label>
+                                <textarea type="textbox" value={ans2} onChange={e => setans2(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="" />
+                            </div>
+                            <div className='mt-2 px-20 '>
+                                <label className="text-xl font-medium text-gray-900 block mb-2 dark:text-gray-300">Did you exercise today?</label>
+                                <textarea type="textbox" value={ans3} onChange={e => setans3(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required="" />
+                            </div>
+
+
                             <button className="justify-center hover:scale-110 text-white bg-black  dark:bg-white dark:text-black text-base font-medium px-4 py-2 rounded-md mt-12"
                                 type='submit'>
                                 Submit
@@ -40,7 +57,7 @@ const Journal = () => {
                         </form>
                     </div>
 
-                    <button className="justify-center hover:scale-110 text-white bg-black  dark:bg-white dark:text-black text-base font-medium px-4 py-2 rounded-md mt-12"
+                    <button className="justify-center hover:scale-110 text-white bg-black  dark:bg-white dark:text-black text-base font-medium px-4 py-2 rounded-md mt-6"
                         onClick={() => setShowModal(false)}>
                         Close
                     </button>
@@ -51,7 +68,7 @@ const Journal = () => {
 
         </div>
     )
-{/* <form onSubmit={handleSubmit}>
+    {/* <form onSubmit={handleSubmit}>
 //     <textarea
 //         name="message"
 //         placeholder="Enter message"
