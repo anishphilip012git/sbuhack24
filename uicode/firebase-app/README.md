@@ -34,3 +34,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+## Project Pitch :
+Introducing MoodTune(GratefulMe/MindfulMe): a groundbreaking full-stack application that revolutionizes the way you navigate your emotions. Utilizing the robust frameworks of Next.js and React, combined with the back-end prowess of Node.js and Python, MoodTune offers a seamless, intuitive platform for emotional journaling and personal growth. With Google Cloud Platform's APIs at its core, including Speech-to-Text and Natural Language Processing, your audio and text journals become the basis for transformative insights.
+
+MoodTune's newest feature now enables you to journal directly on our website, providing a comprehensive, secure space for expressing your thoughts and feelings. This, alongside our original functionalities, offers personalized YouTube video suggestions, affirmations, exercise recommendations, and music playlists, all tailored to your emotional state.
+
+Powered by Firebase for dynamic data management and styled with Tailwind CSS for an engaging user experience, MoodTune stands as a beacon of support and inspiration. Whether through voice, text, or direct journaling on our platform, MoodTune listens, understands, and guides you towards a more positive and balanced emotional well-being. Join us on this journey to discover, heal, and grow with MoodTune, your personal companion in the quest for emotional wellness.
